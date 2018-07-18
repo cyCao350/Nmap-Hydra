@@ -34,7 +34,7 @@ else
  echo -n Enter location of usernames wordlist :
  read v3
 fi
-echo -n "Do you want to use D)efault password-wordlist or enter (M)anually : "
+echo -n "Do you want to use (D)efault password-wordlist or enter (M)anually : "
 read v11;
 if [ $v11 == D -o $v11 == d ]
 then
@@ -55,14 +55,14 @@ fi
 clear
 echo Your command is ready : 
 echo
-echo "hydra -L $v3 -P $v4 -o $var2 -M $var $v5 "
+echo "hydra -L $v3 -P $v4 -s $v2 -o $var2 -M $var $v5 "
 echo
 echo -n "Do you want to continue (y/n) ?"
 read v6
 clear
 if [ $v6 == y -o $v6 == Y ]
 then
-hydra -L $v3 -P $v4 -o $var2 -M $var $v5
+hydra -L $v3 -P $v4 -s $v2 -o $var2 -M $var $v5
 else 
 	echo -n Press q to exit or r to continue :
 	read v6
